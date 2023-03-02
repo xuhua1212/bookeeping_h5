@@ -2,7 +2,7 @@
  * @Author: xuhua
  * @Date: 2023-02-21 11:34:48
  * @LastEditors: xuhua
- * @LastEditTime: 2023-02-21 15:38:16
+ * @LastEditTime: 2023-03-02 16:11:33
  * @FilePath: /bookkeeping_h5/vite.config.js
  * @Description:
  */
@@ -40,7 +40,7 @@ export default defineConfig({
     open: true,
     proxy: {
       "/api": {
-        target: "http://localhost:7001",
+        target: "http://127.0.0.1:7001",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },

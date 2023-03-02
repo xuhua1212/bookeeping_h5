@@ -2,7 +2,7 @@
  * @Author: xuhua
  * @Date: 2023-02-21 15:15:05
  * @LastEditors: xuhua
- * @LastEditTime: 2023-02-21 15:35:23
+ * @LastEditTime: 2023-03-02 16:37:43
  * @FilePath: /bookkeeping_h5/src/utils/request.js
  * @Description:
  *
@@ -15,9 +15,9 @@ const service = axios.create({
   baseURL: baseUrl,
   timeout: 10000,
   headers: {
-    "Content-Type": "application/json;",
+    "Content-Type": "application/json;charset=utf-8",
     authorization: localStorage.getItem("token") || "",
-    "X-Requested-With": "XMLHttpRequest",
+    // "X-Requested-With": "XMLHttpRequest",
   },
 });
 
