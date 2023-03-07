@@ -2,7 +2,7 @@
  * @Author: xuhua
  * @Date: 2023-03-07 09:44:06
  * @LastEditors: xuhua
- * @LastEditTime: 2023-03-07 10:01:45
+ * @LastEditTime: 2023-03-07 14:15:48
  * @FilePath: /bookkeeping_h5/src/components/BillItem/index.jsx
  * @Description:
  */
@@ -10,9 +10,11 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Cell } from "zarm";
 import { useNavigate } from "react-router-dom";
+import CustomIcon from "@/components/CustomIcon";
 import s from "./style.module.less";
+import { typeMap } from "@/utils";
+import dayjs from "dayjs";
 const BillItem = ({ bill }) => {
-  console.log("BillItem ~ bill:", bill);
   const [expense, setExpense] = useState(0); // 支出
   const [income, setIncome] = useState(0); // 收入
   const navigateTo = useNavigate(); // 路由实例
@@ -34,7 +36,7 @@ const BillItem = ({ bill }) => {
       }, 0);
     setIncome(_income);
     setExpense(_expense);
-  }, [bill, bills]);
+  }, [bill]);
 
   // 跳转到账单详情页
   const goToDetail = (item) => {
