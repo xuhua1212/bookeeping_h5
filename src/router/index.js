@@ -2,7 +2,7 @@
  * @Author: xuhua
  * @Date: 2023-02-21 11:40:25
  * @LastEditors: xuhua
- * @LastEditTime: 2023-02-21 17:31:33
+ * @LastEditTime: 2023-03-07 10:02:57
  * @FilePath: /bookkeeping_h5/src/router/index.js
  * @Description:
  */
@@ -26,6 +26,10 @@ const routes = [
   {
     path: "/login",
     component: Login,
+  },
+  {
+    path: "/detail",
+    component: () => import("@/pages/detail"),
   },
 ];
 export default routes;
