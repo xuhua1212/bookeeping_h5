@@ -2,7 +2,7 @@
  * @Author: xuhua
  * @Date: 2023-03-07 14:15:09
  * @LastEditors: xuhua
- * @LastEditTime: 2023-03-07 14:46:31
+ * @LastEditTime: 2023-03-08 15:23:06
  * @FilePath: /bookkeeping_h5/src/utils/index.js
  * @Description:
  */
@@ -54,6 +54,12 @@ export const typeMap = {
   },
   16: {
     icon: "icon-xiaolian",
+  },
+  17: {
+    icon: "icon-hanyan",
+  },
+  18: {
+    icon: "icon-ok",
   },
 };
 

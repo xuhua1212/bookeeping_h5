@@ -2,7 +2,7 @@
  * @Author: xuhua
  * @Date: 2023-03-07 09:44:06
  * @LastEditors: xuhua
- * @LastEditTime: 2023-03-07 14:15:48
+ * @LastEditTime: 2023-03-08 15:50:41
  * @FilePath: /bookkeeping_h5/src/components/BillItem/index.jsx
  * @Description:
  */
@@ -40,7 +40,7 @@ const BillItem = ({ bill }) => {
 
   // 跳转到账单详情页
   const goToDetail = (item) => {
-    navigateTo(`/detail?id=${item.id}`);
+    navigateTo(`/detail/${item.id}`);
   };
 
   return (

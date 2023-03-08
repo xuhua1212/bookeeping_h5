@@ -2,7 +2,7 @@
  * @Author: xuhua
  * @Date: 2023-03-07 14:27:09
  * @LastEditors: xuhua
- * @LastEditTime: 2023-03-07 14:30:54
+ * @LastEditTime: 2023-03-08 14:59:17
  * @FilePath: /bookkeeping_h5/src/api/bill.js
  * @Description:
  */
@@ -15,10 +15,35 @@ export const getBillDataList = (query) => {
     params: query,
   });
 };
-export const register = (data) => {
+
+export const getBillDetail = (query) => {
   return request({
-    url: "/user/register",
+    url: "/bill/getBillDetail",
+    method: "get",
+    params: query,
+  });
+};
+
+export const addBillData = (data) => {
+  return request({
+    url: "/bill/addBill",
     method: "post",
     data,
+  });
+};
+
+export const editBillData = (data) => {
+  return request({
+    url: "/bill/editBill",
+    method: "post",
+    data,
+  });
+};
+
+export const deleteBillData = (query) => {
+  return request({
+    url: "/bill/deleteBill",
+    method: "get",
+    params: query,
   });
 };

@@ -2,7 +2,7 @@
  * @Author: xuhua
  * @Date: 2023-02-21 15:49:07
  * @LastEditors: xuhua
- * @LastEditTime: 2023-03-07 17:43:36
+ * @LastEditTime: 2023-03-08 15:30:33
  * @FilePath: /bookkeeping_h5/src/pages/home/index.jsx
  * @Description:
  */
@@ -13,8 +13,10 @@ import BillItem from "@/components/BillItem";
 import { REFRESH_STATE, LOAD_STATE } from "@/utils";
 import dayjs from "dayjs";
 import { getBillDataList } from "@/api/bill";
+import CustomIcon from "@/components/CustomIcon";
 import PopupType from "@/components/PopupType";
 import PopupDate from "@/components/PopupDate";
+import PopupAddBill from "@/components/PopupAddBill";
 const Home = () => {
   // 总支出
   const [totalExpense, setTotalExpense] = useState(0);
@@ -38,6 +40,8 @@ const Home = () => {
   const [currentSelect, setCurrentSelect] = useState({});
   // 时间
   const dateRef = useRef();
+  // 新增账单
+  const addBillRef = useRef();
 
   useEffect(() => {
     getBillList();
@@ -108,6 +112,12 @@ const Home = () => {
     setCurrentSelect(item);
   };
 
+  // 添加账单
+  const addBill = () => {
+    addBillRef.current && addBillRef.current.show();
+  };
+  const onReload = () => {};
+
   return (
     <div className={s.home}>
       <div className={s.header}>
@@ -154,8 +164,14 @@ const Home = () => {
           </Pull>
         ) : null}
       </div>
+
+      <div className={s.add} onClick={addBill}>
+        <CustomIcon type="icon-notebook2" />
+      </div>
+
       <PopupType ref={typeRef} onSelect={select}></PopupType>
       <PopupDate ref={dateRef} mode="month" onSelect={dateSelect}></PopupDate>
+      <PopupAddBill ref={addBillRef} onReload={refreshData}></PopupAddBill>
     </div>
   );
 };
