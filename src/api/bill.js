@@ -2,7 +2,7 @@
  * @Author: xuhua
  * @Date: 2023-03-07 14:27:09
  * @LastEditors: xuhua
- * @LastEditTime: 2023-03-08 14:59:17
+ * @LastEditTime: 2023-03-09 16:30:43
  * @FilePath: /bookkeeping_h5/src/api/bill.js
  * @Description:
  */
@@ -43,6 +43,13 @@ export const editBillData = (data) => {
 export const deleteBillData = (query) => {
   return request({
     url: "/bill/deleteBill",
+    method: "get",
+    params: query,
+  });
+};
+export const getBillStatistics = (query) => {
+  return request({
+    url: "/bill/getBillStatistics",
     method: "get",
     params: query,
   });
