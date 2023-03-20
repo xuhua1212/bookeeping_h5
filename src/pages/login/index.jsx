@@ -34,7 +34,8 @@ const Login = () => {
         });
         if (data.token) {
           localStorage.setItem("token", data.token);
-          navigateTo("/");
+          window.location.href = "/";
+          // navigateTo("/");
         } else {
           Toast.show("登录失败,请重试");
           navigateTo("/login");
