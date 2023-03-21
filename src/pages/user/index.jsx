@@ -21,7 +21,8 @@ const User = () => {
   const [visible, setVisible] = useState(false);
   const [images, setImages] = useState([]);
   const logout = () => {
-    localStorage.removeItem("token");
+    // localStorage.removeItem("token");
+    localStorage.clear()
     navigateTo("/login");
   };
   const confirmSig = () => {};
