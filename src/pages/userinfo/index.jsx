@@ -2,7 +2,7 @@
  * @Author: xuhua
  * @Date: 2023-03-20 13:58:06
  * @LastEditors: xuhua
- * @LastEditTime: 2023-03-20 15:06:37
+ * @LastEditTime: 2023-03-21 13:52:06
  * @FilePath: /bookkeeping_h5/src/pages/userinfo/index.jsx
  * @Description:
  */
@@ -28,14 +28,14 @@ const Userinfo = () => {
   const getUserInfo = async () => {
     const { data } = await getUserDetail();
     setUser(data);
-    setAvatar(data.avatar);
+    setAvatar(`${baseUrl}${data.avatar}`);
     setSignature(data.signature);
   };
 
   const handleSelect = (file) => {
-    console.log("handleSelect ~ file:", file);
-    if (file && file.size > 200 * 1024) {
-      Toast.show("图片大小不能超过200KB");
+    // 图片不能超过2M
+    if (file && file.size > 2 * 1024 * 1024) {
+      Toast.show("图片大小不能超过2M");
       return;
     }
 

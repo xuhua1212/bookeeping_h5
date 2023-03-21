@@ -2,7 +2,7 @@
  * @Author: xuhua
  * @Date: 2023-02-21 15:49:07
  * @LastEditors: xuhua
- * @LastEditTime: 2023-03-20 15:21:41
+ * @LastEditTime: 2023-03-21 13:52:35
  * @FilePath: /bookkeeping_h5/src/pages/user/index.jsx
  * @Description:
  */
@@ -11,6 +11,7 @@ import s from "./style.module.less";
 import { useNavigate } from "react-router-dom";
 import { Cell, Button, Modal, Input, ImagePreview } from "zarm";
 import { getUserDetail } from "@/api/user";
+import { baseUrl } from "@/config";
 const User = () => {
   const navigateTo = useNavigate();
   const [user, setUser] = useState({});
@@ -22,7 +23,7 @@ const User = () => {
   const [images, setImages] = useState([]);
   const logout = () => {
     // localStorage.removeItem("token");
-    localStorage.clear()
+    localStorage.clear();
     navigateTo("/login");
   };
   const confirmSig = () => {};
@@ -35,7 +36,7 @@ const User = () => {
   const getUserInfo = async () => {
     const { data } = await getUserDetail();
     setUser(data);
-    setAvatar(data.avatar);
+    setAvatar(`${baseUrl}${data.avatar}`);
   };
 
   const avatarPreview = () => {

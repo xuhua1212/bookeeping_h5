@@ -2,7 +2,7 @@
  * @Author: xuhua
  * @Date: 2023-02-21 15:39:40
  * @LastEditors: xuhua
- * @LastEditTime: 2023-03-20 15:35:51
+ * @LastEditTime: 2023-03-21 11:39:09
  * @FilePath: /bookkeeping_h5/src/components/NavBar/index.jsx
  * @Description: 底部导航栏
  */
@@ -16,14 +16,14 @@ const NavBar = ({ showNav }) => {
   const [activeKey, setActiveKey] = useState("");
   const navigateTo = useNavigate();
 
-  useEffect(() => {
-    if (localStorage.getItem("activeKey")) {
-      setActiveKey(localStorage.getItem("activeKey"));
-    }
-  }, [activeKey]);
+  // useEffect(() => {
+  //   if (localStorage.getItem("activeKey")) {
+  //     setActiveKey(localStorage.getItem("activeKey"));
+  //   }
+  // }, [activeKey]);
 
   const changeTab = (path) => {
-    localStorage.setItem("activeKey", path);
+    // localStorage.setItem("activeKey", path);
     setActiveKey(path);
     navigateTo(path);
   };
